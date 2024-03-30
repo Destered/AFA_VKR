@@ -1,6 +1,7 @@
 package com.destered.afa_vkr.dialog
 
 import com.destered.afa_vkr.UtilsFile
+import com.destered.afa_vkr.core.DialogController
 import com.destered.afa_vkr.model.ItemModel
 import com.intellij.openapi.ui.DialogWrapper
 import java.awt.BorderLayout
@@ -17,6 +18,7 @@ class EnterDialog : DialogWrapper(true) {
 
     init {
         title = "Сценарии"
+        DialogController.addDialogToControl(DialogController.DIALOG_ENTER,this)
         init()
     }
 
@@ -38,7 +40,7 @@ class EnterDialog : DialogWrapper(true) {
         loadStrings()
 
 
-        list.addListSelectionListener { e ->
+        list.addListSelectionListener { _ ->
             deleteButton.isEnabled = list.selectedIndices.isNotEmpty() // Включаем кнопку удаления, если выбран хотя бы один элемент
         }
         initDeleteButton(deleteButton)
@@ -114,6 +116,7 @@ class EnterDialog : DialogWrapper(true) {
                 if (selectedElement != null) {
                     val dialog = ElementInfoDialog(selectedElement)
                     dialog.show()
+                    doOKAction()
                 }
             }
         }

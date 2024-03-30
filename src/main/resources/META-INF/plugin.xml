@@ -20,6 +20,6 @@
     <depends>com.intellij.modules.platform</depends>
 
     <actions>
-        <action id="MyPlugin.Action" class="MyPlugin" text="Пример действия плагина"/>
+        <action id="AFAPluginCore.Action" class="AFAPluginCore" text="Автотестирование AFA"/>
     </actions>
 </idea-plugin>

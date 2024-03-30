@@ -1,5 +1,6 @@
 package com.destered.afa_vkr.dialog
 
+import com.destered.afa_vkr.core.DialogController
 import com.intellij.openapi.ui.DialogWrapper
 import java.awt.BorderLayout
 import javax.swing.JComponent
@@ -13,6 +14,7 @@ class CreateModelDialog : DialogWrapper(true) {
 
     init {
         title = "Введите данные"
+        DialogController.addDialogToControl(DialogController.DIALOG_CREATE_MODEL,this)
         init()
     }
 

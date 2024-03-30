@@ -40,3 +40,11 @@ bin/
 
 ### Mac OS ###
 .DS_Store
+/gradle.properties
+/.idea/gradle.xml
+/gradle/wrapper/gradle-wrapper.properties
+/gradlew
+/gradle/wrapper/gradle-wrapper.jar
+/gradlew.bat
+/.idea/
+/.run/

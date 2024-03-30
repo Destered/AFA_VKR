@@ -1,5 +1,7 @@
 package com.destered.afa_vkr.dialog
 
+import HtmlDialog
+import com.destered.afa_vkr.core.DialogController
 import com.destered.afa_vkr.model.ItemModel
 import com.intellij.openapi.ui.DialogWrapper
 import java.awt.BorderLayout
@@ -11,6 +13,7 @@ import javax.swing.JPanel
 class ElementInfoDialog(private val model: ItemModel) : DialogWrapper(true) {
     init {
         title = "Элемент"
+        DialogController.addDialogToControl(DialogController.DIALOG_ELEMENT_INFO,this)
         init()
     }
 
@@ -24,6 +27,7 @@ class ElementInfoDialog(private val model: ItemModel) : DialogWrapper(true) {
         testButton.addActionListener {
             val dialog = HtmlDialog(model)
             dialog.show()
+            doOKAction()
         }
 
         panel.add(nameLabel, BorderLayout.NORTH)
